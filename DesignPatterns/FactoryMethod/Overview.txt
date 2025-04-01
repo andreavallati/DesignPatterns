@@ -1,0 +1,21 @@
+﻿The Factory Method pattern is a creational design pattern that provides an interface for creating
+objects but allows subclasses to alter the type of objects that will be created. 
+It's useful when the exact type of object isn't known until runtime or when you want to 
+centralize the creation logic for objects of a particular type.
+
+In C#, the Factory Method pattern can be implemented by creating an abstract base
+class with a method that returns an object, and then having subclasses override that
+method to provide specific implementations.
+
+Key Components:
+- Product: Defines the interface for the type of object to be created.
+- Concrete Product: Implements the Product interface.
+- Creator: Declares the factory method, which returns an object of type Product. 
+The Creator can either be an abstract class or an interface.
+- Concrete Creator: Implements the factory method to return a Concrete Product.
+
+Steps to implement:
+- Define the Product interface or abstract class.
+- Create Concrete Products that implement the Product interface.
+- Create a Creator class with the factory method.
+- Create Concrete Creators that override the factory method to instantiate specific Concrete Products.

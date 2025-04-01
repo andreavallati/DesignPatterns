@@ -1,0 +1,17 @@
+﻿The Strategy pattern is a behavioral design pattern that allows you to define a family of algorithms, 
+encapsulate each one as a class, and make them interchangeable. 
+This approach lets the algorithm vary independently from clients that use it. 
+In C#, the Strategy pattern is often implemented using interfaces and classes,
+where the main class relies on an abstract interface, making it easy to swap out algorithms at runtime.
+
+
+1. Define the Strategy Interface
+Start by defining an interface that will be common to all concrete strategy classes. 
+This interface declares a method that all supported algorithms must implement.
+
+2. Implement Concrete Strategies
+Create multiple classes that implement this interface, each providing a different algorithm or behavior.
+
+3. Create a Context Class
+The Context class has a reference to a Strategy object and interacts with it only through the 
+Strategy interface. This way, the Context can switch between strategies at runtime.

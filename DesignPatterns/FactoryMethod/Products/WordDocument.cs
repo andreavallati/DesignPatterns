@@ -1,0 +1,12 @@
+﻿using FactoryMethod.Products.Interfaces;
+
+namespace FactoryMethod.Products
+{
+    public class WordDocument : IDocument
+    {
+        public void Open()
+        {
+            Console.WriteLine("Opening a Word document.");
+        }
+    }
+}

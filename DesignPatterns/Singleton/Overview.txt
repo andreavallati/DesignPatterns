@@ -1,0 +1,3 @@
+﻿In C#, the Singleton design pattern ensures that a class has only one instance and provides a global 
+point of access to it. The Singleton pattern can be implemented in different ways, 
+depending on whether you need lazy initialization, thread-safety, or both.

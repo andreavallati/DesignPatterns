@@ -1,0 +1,12 @@
+﻿The Prototype pattern is a creational design pattern that lets you copy or clone existing objects 
+without making your code dependent on their classes. This pattern is particularly useful when the 
+cost of creating a new instance of a class is expensive, and instead, you want 
+to duplicate an existing instance.
+
+In C#, you can implement the Prototype pattern by creating a Clone method in your class or by 
+implementing the ICloneable interface. Here’s a complete example to demonstrate this:
+
+Step-by-Step Implementation
+- Define the Prototype Interface: Create an interface with a Clone method.
+- Create Concrete Prototypes: Implement the interface in your classes and define the cloning behavior.
+- Use the Prototype: Demonstrate cloning and modifying objects to showcase how they can be used independently.
