@@ -1,0 +1,4 @@
+﻿The Adapter Pattern is a structural design pattern that allows incompatible interfaces to work together. 
+It acts as a bridge between two incompatible interfaces by "adapting" one interface to another.
+In C#, this is particularly useful when you need to integrate a class that has an interface which 
+differs from what your code expects.

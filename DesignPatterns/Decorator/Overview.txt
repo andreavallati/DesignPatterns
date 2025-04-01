@@ -1,0 +1,4 @@
+﻿The decorator pattern in C# allows you to add behavior to objects dynamically, without altering the structure of the original class. This can be especially useful when you want to extend functionality but avoid subclassing or modifying existing code directly.
+
+Let's walk through an example to demonstrate how to implement the decorator pattern. In this example, we’ll create a simple ICoffee interface, a base SimpleCoffee class that implements this interface, and decorators that modify the coffee's behavior 
+(like adding milk or sugar).

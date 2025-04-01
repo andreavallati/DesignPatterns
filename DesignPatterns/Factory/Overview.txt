@@ -1,0 +1,17 @@
+﻿The Factory Pattern in C# is a creational design pattern used to create objects without specifying the exact 
+class of object that will be created. It helps in creating objects in a more structured way, especially
+when dealing with complex or dynamic object creation logic.
+
+How the Factory Pattern Works:
+- Factory Method: Defines an interface for creating objects but allows subclasses to alter 
+the type of objects that will be created.
+- When to Use: When you have a scenario where you have multiple types of objects, 
+but the decision about which object to create is determined at runtime. 
+This promotes loose coupling and adherence to the Open-Closed Principle.
+
+Key Components:
+- Product Interface: This defines the common interface or abstract class for the 
+objects that the factory method will create.
+- Concrete Products: These are the actual implementations of the product interface.
+- Factory Class: This class contains the factory method which returns the appropriate 
+object based on some condition or parameter.
