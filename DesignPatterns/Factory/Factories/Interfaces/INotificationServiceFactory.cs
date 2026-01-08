@@ -1,9 +1,10 @@
-﻿using Factory.Notifications.Interfaces;
+﻿using Factory.Enums;
+using Factory.Notifications.Interfaces;
 
 namespace Factory.Factories.Interfaces
 {
     public interface INotificationServiceFactory
     {
-        INotificationService CreateNotificationService(string notificationType);
+        INotificationService CreateNotificationService(NotificationType notificationType);
     }
 }

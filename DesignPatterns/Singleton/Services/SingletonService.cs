@@ -2,15 +2,18 @@
 
 namespace Singleton.Services
 {
-    public class SingletonService : ISingletonService
+    public sealed class SingletonService : ISingletonService
     {
+        private static readonly Lazy<SingletonService> _instance = new Lazy<SingletonService>(() => new SingletonService());
         private readonly Guid _instanceId;
 
-        public SingletonService()
+        private SingletonService()
         {
             _instanceId = Guid.NewGuid();
             Console.WriteLine($"SingletonService created with ID: {_instanceId}");
         }
+
+        public static SingletonService Instance => _instance.Value;
 
         public void PerformAction()
         {
