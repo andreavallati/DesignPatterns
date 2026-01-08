@@ -1,6 +1,6 @@
-﻿using Decorator.Services;
+﻿using Decorator.Dependencies;
+using Decorator.Services;
 using Microsoft.Extensions.DependencyInjection;
-using Singleton.Dependencies;
 
 var serviceProvider = DecoratorConfiguration.ConfigureServices();
 

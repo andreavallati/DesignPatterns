@@ -1,27 +1,19 @@
 ﻿using AbstractFactory.Factories.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
+using AbstractFactory.Products;
+using AbstractFactory.Products.Interfaces;
 
 namespace AbstractFactory.Factories
 {
     public class MacFactory : IGUIFactory
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public MacFactory(IServiceProvider serviceProvider)
+        public IButton CreateButton()
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+            return new MacButton();
         }
 
-        public TElement CreateProduct<TElement>() where TElement : class
+        public ICheckBox CreateCheckBox()
         {
-            var guiElement = _serviceProvider.GetRequiredService<TElement>();
-
-            if (guiElement is null)
-            {
-                throw new InvalidOperationException("Unknown product type");
-            }
-
-            return guiElement;
+            return new MacCheckBox();
         }
     }
 }

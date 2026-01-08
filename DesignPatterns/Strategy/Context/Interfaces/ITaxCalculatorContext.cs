@@ -1,9 +1,10 @@
-﻿using Strategy.Interfaces;
+﻿using Strategy.Strategies.Interfaces;
 
 namespace Strategy.Context.Interfaces
 {
     public interface ITaxCalculatorContext
     {
-        decimal CalculateTax<TStrategy>(decimal income) where TStrategy : ITaxStrategy;
+        void SetStrategy(ITaxStrategy strategy);
+        decimal CalculateTax(decimal income);
     }
 }

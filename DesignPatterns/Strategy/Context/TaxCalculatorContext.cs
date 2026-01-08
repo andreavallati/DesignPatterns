@@ -1,27 +1,25 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using Strategy.Context.Interfaces;
-using Strategy.Interfaces;
+﻿using Strategy.Context.Interfaces;
+using Strategy.Strategies.Interfaces;
 
 namespace Strategy.Context
 {
     public class TaxCalculatorContext : ITaxCalculatorContext
     {
-        private readonly IServiceProvider _serviceProvider;
+        private ITaxStrategy? _taxStrategy;
 
-        public TaxCalculatorContext(IServiceProvider serviceProvider)
+        public void SetStrategy(ITaxStrategy strategy)
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+            _taxStrategy = strategy ?? throw new ArgumentNullException(nameof(strategy));
         }
 
-        public decimal CalculateTax<TStrategy>(decimal income) where TStrategy : ITaxStrategy
+        public decimal CalculateTax(decimal income)
         {
-            var taxStrategy = _serviceProvider.GetRequiredService<TStrategy>();
-            if (taxStrategy is null)
+            if (_taxStrategy == null)
             {
-                throw new InvalidOperationException("Tax strategy not found.");
+                throw new InvalidOperationException("Tax strategy has not been set.");
             }
 
-            return taxStrategy.CalculateTax(income);
+            return _taxStrategy.CalculateTax(income);
         }
     }
 }

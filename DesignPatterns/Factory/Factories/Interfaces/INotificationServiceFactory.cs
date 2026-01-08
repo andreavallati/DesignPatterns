@@ -4,6 +4,6 @@ namespace Factory.Factories.Interfaces
 {
     public interface INotificationServiceFactory
     {
-        TNotificationService CreateNotificationService<TNotificationService>() where TNotificationService : INotificationService;
+        INotificationService CreateNotificationService(string notificationType);
     }
 }

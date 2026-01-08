@@ -4,17 +4,14 @@ using Builder.Services;
 using Builder.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Adapter.Dependencies
+namespace Builder.Dependencies
 {
     public static class BuilderConfiguration
     {
         public static ServiceProvider ConfigureServices()
         {
-            // Configure DI services
             var serviceCollection = new ServiceCollection();
             Configure(serviceCollection);
-
-            // Build the service provider
             return serviceCollection.BuildServiceProvider();
         }
 
@@ -22,6 +19,7 @@ namespace Adapter.Dependencies
         {
             serviceCollection.AddSingleton<IEngineBuilderService, EngineBuilderService>();
             serviceCollection.AddSingleton<IGPSService, GPSService>();
+            // Changed to Transient so each build gets a fresh builder instance
             serviceCollection.AddTransient<ICarBuilder, CarBuilder>();
         }
     }

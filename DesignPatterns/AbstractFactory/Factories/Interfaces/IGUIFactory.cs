@@ -1,7 +1,10 @@
-﻿namespace AbstractFactory.Factories.Interfaces
+﻿using AbstractFactory.Products.Interfaces;
+
+namespace AbstractFactory.Factories.Interfaces
 {
     public interface IGUIFactory
     {
-        TElement CreateProduct<TElement>() where TElement : class;
+        IButton CreateButton();
+        ICheckBox CreateCheckBox();
     }
 }

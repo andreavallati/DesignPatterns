@@ -9,10 +9,10 @@ namespace Builder.Builders
         private readonly IEngineBuilderService _engineBuilderService;
         private readonly IGPSService _gpsService;
 
-        private string _engine;
+        private string? _engine;
         private int _seats;
         private bool _hasGPS;
-        private string _transmission;
+        private string? _transmission;
 
         public CarBuilder(IEngineBuilderService engineBuilderService, IGPSService gpsService)
         {
@@ -46,7 +46,20 @@ namespace Builder.Builders
 
         public Car Build()
         {
-            return new Car(_engine, _seats, _hasGPS, _transmission);
+            var car = new Car(_engine ?? "Standard", _seats, _hasGPS, _transmission ?? "Manual");
+            
+            // Reset the builder state after building
+            Reset();
+            
+            return car;
+        }
+
+        private void Reset()
+        {
+            _engine = null;
+            _seats = 0;
+            _hasGPS = false;
+            _transmission = null;
         }
     }
 }

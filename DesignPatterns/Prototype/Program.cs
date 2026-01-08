@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Prototype.Dependencies;
 using Prototype.Models;
 using Prototype.Services.Interfaces;
-using Singleton.Dependencies;
 
 var serviceProvider = PrototypeConfiguration.ConfigureServices();
 

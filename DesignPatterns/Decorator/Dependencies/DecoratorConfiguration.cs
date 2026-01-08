@@ -4,7 +4,7 @@ using Decorator.Models.Interfaces;
 using Decorator.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Singleton.Dependencies
+namespace Decorator.Dependencies
 {
     public static class DecoratorConfiguration
     {

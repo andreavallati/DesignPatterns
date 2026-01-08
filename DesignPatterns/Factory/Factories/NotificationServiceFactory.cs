@@ -1,28 +1,20 @@
 ﻿using Factory.Factories.Interfaces;
+using Factory.Notifications;
 using Factory.Notifications.Interfaces;
-using Microsoft.Extensions.DependencyInjection;
 
 namespace Factory.Factories
 {
     public class NotificationServiceFactory : INotificationServiceFactory
     {
-        private readonly IServiceProvider _serviceProvider;
-
-        public NotificationServiceFactory(IServiceProvider serviceProvider)
+        public INotificationService CreateNotificationService(string notificationType)
         {
-            _serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
-        }
-
-        public TNotificationService CreateNotificationService<TNotificationService>() where TNotificationService : INotificationService
-        {
-            var notificationService = _serviceProvider.GetRequiredService<TNotificationService>();
-
-            if (notificationService is null)
+            return notificationType.ToLower() switch
             {
-                throw new InvalidOperationException("Notification service not found.");
-            }
-
-            return notificationService;
+                "email" => new EmailNotification(),
+                "sms" => new SmsNotification(),
+                "push" => new PushNotification(),
+                _ => throw new ArgumentException($"Unknown notification type: {notificationType}")
+            };
         }
     }
 }

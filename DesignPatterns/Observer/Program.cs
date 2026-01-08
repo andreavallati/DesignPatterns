@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Observer.Dependencies;
 using Observer.Services.Interfaces;
-using Singleton.Dependencies;
 
 var serviceProvider = ObserverConfiguration.ConfigureServices();
 

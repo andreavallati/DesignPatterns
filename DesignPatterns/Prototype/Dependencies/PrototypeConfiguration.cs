@@ -2,7 +2,7 @@
 using Prototype.Services;
 using Prototype.Services.Interfaces;
 
-namespace Singleton.Dependencies
+namespace Prototype.Dependencies
 {
     public static class PrototypeConfiguration
     {

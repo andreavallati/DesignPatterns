@@ -1,26 +1,28 @@
-﻿using Adapter.Dependencies;
-using Builder.Builders.Interfaces;
+﻿using Builder.Builders.Interfaces;
+using Builder.Dependencies;
 using Builder.Models;
 using Microsoft.Extensions.DependencyInjection;
 
 var serviceProvider = BuilderConfiguration.ConfigureServices();
 
-var carBuilder = serviceProvider.GetRequiredService<ICarBuilder>();
+// Get a new builder instance for the first car
+var carBuilder1 = serviceProvider.GetRequiredService<ICarBuilder>();
 
-// Build a car using the injected services
-Car sportsCar = carBuilder.SetEngine("V8")
-                          .SetSeats(2)
-                          .SetGPS()
-                          .SetTransmission("Automatic")
-                          .Build();
+Car sportsCar = carBuilder1.SetEngine("V8")
+                           .SetSeats(2)
+                           .SetGPS()
+                           .SetTransmission("Automatic")
+                           .Build();
 
 Console.WriteLine(sportsCar);
 
-// Build another car
-Car suv = carBuilder.SetEngine("V6")
-                    .SetSeats(7)
-                    .SetGPS()
-                    .SetTransmission("Manual")
-                    .Build();
+// Get a new builder instance for the second car
+var carBuilder2 = serviceProvider.GetRequiredService<ICarBuilder>();
+
+Car suv = carBuilder2.SetEngine("V6")
+                     .SetSeats(7)
+                     .SetGPS()
+                     .SetTransmission("Manual")
+                     .Build();
 
 Console.WriteLine(suv);

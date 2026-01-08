@@ -3,7 +3,7 @@ using Observer.Observers;
 using Observer.Services;
 using Observer.Services.Interfaces;
 
-namespace Singleton.Dependencies
+namespace Observer.Dependencies
 {
     public static class ObserverConfiguration
     {
