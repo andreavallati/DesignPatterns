@@ -334,24 +334,6 @@ This repository shows **both traditional patterns and modern integration**.
 
 ---
 
-## Project Structure
-```
-DesignPatterns/
-│── Prototype/
-│── Singleton/
-│── Strategy/
-│── AbstractFactory/
-│── Adapter/
-│── Builder/
-│── Decorator/
-│── Factory/
-│── FactoryMethod/
-│── Observer/
-│── DesignPatterns.sln
-```
-
----
-
 ## Installation
 ### Prerequisites
 
